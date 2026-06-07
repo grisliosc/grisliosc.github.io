@@ -975,3 +975,114 @@ blockquote {
   padding: 40px 24px;
   text-align: center;
 }
+
+/* ============================================
+   --- RESPONSIVE (LAPTOP, TABLET, HP) --- 
+   ============================================ */
+
+/* 1. LAPTOP KECIL / TABLET LANDSCAPE (Maksimal 1024px) */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* Project menjadi 2 kolom */
+  }
+  
+  .project-card.featured {
+    grid-column: span 2; /* Card unggulan mengambil 2 kolom */
+  }
+  
+  .hero {
+    padding: 120px 32px 60px;
+    gap: 40px;
+  }
+}
+
+/* 2. TABLET PORTRAIT (Maksimal 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem; /* Ukuran font menu dikecilkan sedikit */
+  }
+  
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Semua grid yang tadinya bersebelahan, diubah jadi atas-bawah (1 kolom) */
+  .tentang-grid,
+  .skill-categories,
+  .edu-cert-grid,
+  .kontak-grid {
+    grid-template-columns: 1fr; 
+    gap: 40px;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr; /* Project menjadi 1 kolom penuh */
+  }
+  
+  .project-card.featured {
+    grid-column: span 1;
+  }
+
+  .section {
+    padding: 80px 0; /* Mengurangi jarak antar section di tablet */
+  }
+}
+
+/* 3. HANDPHONE / MOBILE (Maksimal 576px) */
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column; /* Logo dan menu atas-bawah */
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap; /* Jika layar terlalu kecil, menu akan turun ke baris baru */
+    justify-content: center;
+    gap: 14px;
+  }
+  
+  .hero {
+    padding: 140px 20px 50px; /* Jarak atas ditambah agar tidak tertutup menu */
+  }
+  
+  .hero-title {
+    font-size: clamp(1.8rem, 8vw, 2.2rem); /* Ukuran judul menyesuaikan layar */
+  }
+  
+  .avatar-card {
+    min-width: 100%; /* Kotak profil penuh selebar layar HP */
+    padding: 24px;
+  }
+  
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  
+  .section {
+    padding: 60px 0; /* Jarak antar section lebih rapat di HP */
+  }
+  
+  .kontak-form {
+    padding: 24px; /* Form kontak sedikit diperkecil ruang kosongnya */
+  }
+}
